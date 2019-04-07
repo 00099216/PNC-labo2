@@ -4,18 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
-	<h1>Ejemplo Servlet</h1>
+	<h1>Registro</h1>
 	<form action="Mainservlet" method="get">
-		<select name="dep">
-			<option value="volvo">Labo quimica</option>
-			<option value="ahaab">Labo DEI</option>
-		</select>
-		<label>Presupuesto: </label><input name="dinero" type="text">
-		<label>Numero: </label><input name="nLabos" type="number">
-		<input type="submit" value="Calcular">
+		<label>Usuario: </label><input name="username" type="text">
+		<label>Contraseña: </label><input name="password" type="password">
+		<input type="submit" value="Verificar">
 	</form>
 </body>
 </html>

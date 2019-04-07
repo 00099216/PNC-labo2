@@ -9,12 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.capas.servlets.String;
+
 /**
  * Servlet implementation class Mainservlet
  */
 @WebServlet("/Mainservlet")
 public class Mainservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static  String usuario="user";
+	private static  String contraseña="password";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,15 +34,13 @@ public class Mainservlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String dep = request.getParameter("dep");
-		double money = Double.parseDouble(request.getParameter("dinero"));
-		int nLab = Integer.parseInt(request.getParameter("nLabos"));
-		
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
-		out.println("<body>");
-		out.println("<h3>" + "suma total de laboratorio" + dep + "fue: $" + money*nLab + "</h3>");
-		out.println("</body>");
+		out.println("<body><h3>");
+		out.println(username.trim().equals(usuario)&&password.trim().equals(contraseña)?"Bienvenido":"Intentelo nuevamente");
+		out.println("</h3></body>");
 		out.println("</html>");
 	}
 
