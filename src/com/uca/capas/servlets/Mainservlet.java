@@ -18,7 +18,7 @@ import com.capas.servlets.String;
 public class Mainservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static  String usuario="user";
-	private static  String contraseña="password";
+	private static  String contra="password";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -34,14 +34,7 @@ public class Mainservlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String username=request.getParameter("username");
-		String password=request.getParameter("password");
-		PrintWriter out = response.getWriter();
-		out.println("<html>");
-		out.println("<body><h3>");
-		out.println(username.trim().equals(usuario)&&password.trim().equals(contraseña)?"Bienvenido":"Intentelo nuevamente");
-		out.println("</h3></body>");
-		out.println("</html>");
+
 	}
 
 	/**
@@ -49,7 +42,14 @@ public class Mainservlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<body><h3>");
+		out.println(username.trim().equals(usuario)&&password.trim().equals(contra)?"Bienvenido":"Intentelo nuevamente");
+		out.println("</h3></body>");
+		out.println("</html>");
 	}
 
 }
